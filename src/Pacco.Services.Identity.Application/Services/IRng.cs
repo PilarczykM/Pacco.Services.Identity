@@ -1,7 +1,6 @@
-namespace Pacco.Services.Identity.Application.Services
+namespace Pacco.Services.Identity.Application.Services;
+
+public interface IRng
 {
-    public interface IRng
-    {
-        string Generate(int length = 50, bool removeSpecialChars = false);
-    }
+    string Generate(int length = 50, bool removeSpecialChars = false);
 }

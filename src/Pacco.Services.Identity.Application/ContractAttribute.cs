@@ -1,8 +1,7 @@
 using System;
 
-namespace Pacco.Services.Identity.Application
+namespace Pacco.Services.Identity.Application;
+
+public class ContractAttribute : Attribute
 {
-    public class ContractAttribute : Attribute
-    {
-    }
 }
