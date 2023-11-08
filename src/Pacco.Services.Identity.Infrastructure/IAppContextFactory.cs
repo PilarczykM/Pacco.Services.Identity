@@ -1,9 +1,8 @@
 using Pacco.Services.Identity.Application;
 
-namespace Pacco.Services.Identity.Infrastructure
+namespace Pacco.Services.Identity.Infrastructure;
+
+public interface IAppContextFactory
 {
-    public interface IAppContextFactory
-    {
-        IAppContext Create();
-    }
+    IAppContext Create();
 }

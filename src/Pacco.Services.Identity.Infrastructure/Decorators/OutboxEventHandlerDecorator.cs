@@ -1,5 +1,7 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
+
 using Convey.CQRS.Events;
 using Convey.MessageBrokers;
 using Convey.MessageBrokers.Outbox;
@@ -29,9 +31,9 @@ namespace Pacco.Services.Identity.Infrastructure.Decorators
                 : messageProperties.MessageId;
         }
 
-        public Task HandleAsync(TEvent @event)
+        public Task HandleAsync(TEvent @event, CancellationToken cancellationToken = default)
             => _enabled
                 ? _outbox.HandleAsync(_messageId, () => _handler.HandleAsync(@event))
-                : _handler.HandleAsync(@event);
+                : _handler.HandleAsync(@event, cancellationToken);
     }
 }
