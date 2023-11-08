@@ -1,6 +1,5 @@
-namespace Pacco.Services.Identity.Core.Entities
+namespace Pacco.Services.Identity.Core.Entities;
+
+public interface IDomainEvent
 {
-    public interface IDomainEvent
-    {
-    }
 }

@@ -1,20 +1,19 @@
-namespace Pacco.Services.Identity.Core.Entities
+namespace Pacco.Services.Identity.Core.Entities;
+
+public static class Role
 {
-    public static class Role
+    public const string User = "user";
+    public const string Admin = "admin";
+
+    public static bool IsValid(string role)
     {
-        public const string User = "user";
-        public const string Admin = "admin";
-
-        public static bool IsValid(string role)
+        if (string.IsNullOrWhiteSpace(role))
         {
-            if (string.IsNullOrWhiteSpace(role))
-            {
-                return false;
-            }
-
-            role = role.ToLowerInvariant();
-
-            return role == User || role == Admin;
+            return false;
         }
+
+        role = role.ToLowerInvariant();
+
+        return role == User || role == Admin;
     }
 }
