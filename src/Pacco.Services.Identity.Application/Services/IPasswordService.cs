@@ -1,8 +1,7 @@
-namespace Pacco.Services.Identity.Application.Services
+namespace Pacco.Services.Identity.Application.Services;
+
+public interface IPasswordService
 {
-    public interface IPasswordService
-    {
-        bool IsValid(string hash, string password);
-        string Hash(string password);
-    }
+    bool IsValid(string hash, string password);
+    string Hash(string password);
 }

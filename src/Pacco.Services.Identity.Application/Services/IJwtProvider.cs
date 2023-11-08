@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
+
 using Pacco.Services.Identity.Application.DTO;
 
-namespace Pacco.Services.Identity.Application.Services
+namespace Pacco.Services.Identity.Application.Services;
+
+public interface IJwtProvider
 {
-    public interface IJwtProvider
-    {
-        AuthDto Create(Guid userId, string role, string audience = null,
-            IDictionary<string, IEnumerable<string>> claims = null);
-    }
+    AuthDto Create(Guid userId, string role, string audience = null,
+        IDictionary<string, IEnumerable<string>> claims = null);
 }
